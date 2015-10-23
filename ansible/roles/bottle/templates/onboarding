@@ -1,0 +1,17 @@
+server {
+     listen   443;
+     root /usr/share/nginx/onboarding;
+     server_name {{ inventory_hostname }};
+
+	 ssl on;
+	 ssl_certificate /etc/ssl/certs/{{ ssl_crt_filename }};
+	 ssl_certificate_key /etc/ssl/private/onboarding.hos.hpecorp.net.key;
+	 
+     location / {
+     include uwsgi_params;
+     uwsgi_pass unix:/tmp/uwsgi.onboarding.socket;
+     uwsgi_param UWSGI_PYHOME /usr/share/nginx/onboarding/env;
+     uwsgi_param UWSGI_CHIDIR /usr/share/nginx/onboarding;
+     uwsgi_param UWSGI_SCRIPT onboarding; # this should be the .py file name without suffix that your bottle will use to launch
+     }
+}

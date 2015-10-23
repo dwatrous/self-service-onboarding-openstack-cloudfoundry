@@ -1,0 +1,7 @@
+[automation]
+onboarding-pro.domain.com    ansible_connection=ssh  ansible_ssh_user=ubuntu   ansible_ssh_private_key_file=~/.ssh/keypair.pem
+
+[automation:vars]
+als_auth_host=aok.stackato.domain.com
+als_api_host=api.stackato.domain.com
+ssl_crt_filename=onboarding-pro.domain.com.crt

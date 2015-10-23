@@ -1,0 +1,9 @@
+---
+- name: Install Automation, Nginx, and bottlepy
+  hosts: automation
+  remote_user: ubuntu
+  sudo: yes
+
+  roles:
+    - nginx
+    - bottle

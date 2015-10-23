@@ -1,0 +1,9 @@
+*.pyc
+.vagrant
+docs/helion-dev-platform-automation.zargo~
+hosautomation-hosp.pem
+terraform.tfvars
+openstack.v3.conf.json
+als.conf.json
+openstack.v2.conf.json
+ucmdb.conf.json
